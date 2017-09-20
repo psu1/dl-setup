@@ -1,5 +1,3 @@
-## Update: I've built a quick tool based on this repo. Start running your Tensorflow project on AWS in <30seconds using Floyd. See [www.floydhub.com](https://www.floydhub.com). It's free to try out. 
-### Happy to take feature requests/feedback and answer questions - mail me sai@floydhub.com.
 
 ## Setting up a Deep Learning Machine from Scratch (Software)
 A detailed guide to setting up your machine for deep learning research. Includes instructions to install drivers, tools and various deep learning frameworks. This was tested on a 64 bit machine with Nvidia Titan X, running Ubuntu 14.04
@@ -100,6 +98,18 @@ There are several great guides with a similar goal. Some are limited in scope, w
         
 ### Check
 * You can do a check to ensure everything is good so far using the `nvidia-smi` command. This should output some stats about your GPU
+
+### Anaconda Python
+
+	mkdir downloads
+	cd downloads
+	wget "https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh" -O "Anaconda2-4.2.0-Linux-x86_64.sh"
+	bash "Anaconda2-4.2.0-Linux-x86_64.sh" -b
+
+	echo "export PATH=\"$HOME/anaconda2/bin:\$PATH\"" >> ~/.bashrc
+	export PATH="$HOME/anaconda2/bin:$PATH"
+	conda install -y bcolz
+	conda upgrade -y --all
 
 ### Python Packages
 * Install some useful Python packages using apt-get. There are some version incompatibilities with using pip install and TensorFlow ( see https://github.com/tensorflow/tensorflow/issues/2034)
