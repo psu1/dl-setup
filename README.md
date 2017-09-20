@@ -1,8 +1,7 @@
 
 ## Software setup for deep learning machine
 This personal dl setup is based on [Setting up a Deep Learning Machine from Scratch (Software)](https://github.com/floydhub/dl-setup).
-
-A detailed guide to setting up your machine for deep learning research. Includes instructions to install drivers, tools and various deep learning frameworks. This was tested on a 64 bit machine with Nvidia Titan X, running Ubuntu 14.04
+All the setup are tested on **64bit Ubuntu 14.04 with Nvidia Titan X**. 
 
 There are several great guides with a similar goal. Some are limited in scope, while others are not up to date. This guide is based on (with some portions copied verbatim from):
 * [Caffe Installation for Ubuntu](https://github.com/tiangolo/caffe/blob/ubuntu-tutorial-b/docs/install_apt2.md)
@@ -15,7 +14,7 @@ There are several great guides with a similar goal. Some are limited in scope, w
 * [cuDNN](#cudnn)
 * [Anaconda Python](#anaconda-python)
 * [Python Packages](#python-packages)
-* [Pytorch] (#pytorch)
+* [Pytorch](#pytorch)
 * [Tensorflow](#tensorflow)
 * [OpenBLAS](#openblas)
 * [Common Tools](#common-tools)
