@@ -1,5 +1,7 @@
 
-## Setting up a Deep Learning Machine from Scratch (Software)
+## Software setup for deep learning machine
+This personal dl setup is based on [Setting up a Deep Learning Machine from Scratch (Software)](https://github.com/floydhub/dl-setup).
+
 A detailed guide to setting up your machine for deep learning research. Includes instructions to install drivers, tools and various deep learning frameworks. This was tested on a 64 bit machine with Nvidia Titan X, running Ubuntu 14.04
 
 There are several great guides with a similar goal. Some are limited in scope, while others are not up to date. This guide is based on (with some portions copied verbatim from):
@@ -11,15 +13,14 @@ There are several great guides with a similar goal. Some are limited in scope, w
 * [Nvidia Drivers](#nvidia-drivers)
 * [CUDA](#cuda)
 * [cuDNN](#cudnn)
+* [Anaconda Python](#anaconda-python)
 * [Python Packages](#python-packages)
+* [Pytorch] (#pytorch)
 * [Tensorflow](#tensorflow)
 * [OpenBLAS](#openblas)
 * [Common Tools](#common-tools)
 * [Caffe](#caffe)
-* [Theano](#theano)
-* [Keras](#keras)
-* [Torch](#torch)
-* [X2Go](#x2go)
+
 
 ### Basics
 * First, open a terminal and run the following commands to make sure your OS is up-to-date
@@ -120,6 +121,12 @@ There are several great guides with a similar goal. Some are limited in scope, w
         sudo apt-get clean && sudo apt-get autoremove
         rm -rf /var/lib/apt/lists/*
  
+### Pytorch
+* Install [pytorch](http://pytorch.org/). 
+
+		conda install pytorch torchvision -c soumith	
+
+	
 
 ### Tensorflow
 * This installs v0.8 with GPU support. Instructions below are from [here](https://www.tensorflow.org/versions/r0.8/get_started/os_setup.html)
@@ -198,45 +205,3 @@ There are several great guides with a similar goal. Some are limited in scope, w
         >>> import caffe
         >>> exit()
 
-### Theano
-* Install the pre-requisites and install Theano. These instructions are sourced from [here](http://deeplearning.net/software/theano/install_ubuntu.html)
-
-        sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ python-pygments python-sphinx python-nose
-        sudo pip install Theano
-        
-* Test your Theano installation. There should be no warnings/errors when the import command is executed.
-
-        python
-        >>> import theano
-        >>> exit()
-        
-### Keras
-* Keras is a useful wrapper around Theano and Tensorflow. By default, it uses Theano as the backend. See [here](http://keras.io/backend/) for instructions on how to change this to Tensorflow. 
-
-        sudo pip install keras
-        
-### Torch
-* Instructions to install Torch below are sourced from [here](http://torch.ch/docs/getting-started.html). The installation takes a little while
-
-        git clone https://github.com/torch/distro.git ~/git/torch --recursive
-        cd torch; bash install-deps;
-        ./install.sh
-
-### X2Go
-* If your deep learning machine is not your primary work desktop, it helps to be able to access it remotely. [X2Go](http://wiki.x2go.org/doku.php/doc:newtox2go) is a fantastic remote access solution. You can install the X2Go server on your Ubuntu machine using the instructions below. 
-
-        sudo apt-get install software-properties-common
-        sudo add-apt-repository ppa:x2go/stable
-        sudo apt-get update
-        sudo apt-get install x2goserver x2goserver-xsession
-        
-* X2Go does not support the Unity desktop environment (the default in Ubuntu). I have found XFCE to work pretty well. More details on the supported environmens [here](http://wiki.x2go.org/doku.php/doc:de-compat)
-
-        sudo apt-get update
-        sudo apt-get install -y xfce4 xfce4-goodies xubuntu-desktop
-        
-* Find the IP of your machine using
-
-        hostname -I
-        
-* You can install a client on your main machine to connect to your deep learning server using the above IP. More instructions [here](http://wiki.x2go.org/doku.php/doc:usage:x2goclient) depending on your Client OS
